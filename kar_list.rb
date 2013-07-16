@@ -18,11 +18,27 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-class Kar
-	def initialize
+class KarList
+	attr_reader :kar_list
+	
+	def initialize 
+		@kar_list = []
+	end
 
+	def add_task
+		raise 'Not Implmented'
+	end
+
+	def delete_task
+		raise 'Not Implemented'
+	end
+
+	def edit_task
+		raise 'Not Implemented'
+	end
+
+	def search_task
+		raise 'Not Implemented'
 	end
 end
-
-
 

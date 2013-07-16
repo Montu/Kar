@@ -18,11 +18,28 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-class Kar
-	def initialize
+descirbe KarList do
+	before :each do
+
+	end
+	
+	it 'Should create task list' do
+
+	end
+
+	it 'Should add a task to the task list' do
+
+	end
+
+	it 'Should delete a task from the task list' do
+
+	end
+
+	it 'Should edit a task in the task list' do
+
+	end
+
+	it 'Should search a task in the task list' do
 
 	end
 end
-
-
-

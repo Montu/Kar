@@ -18,11 +18,13 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-class Kar
-	def initialize
+require 'date'
 
+describe KarTask do
+	before :each do
+		task = KarTask.each 1, 'Test_name', Date.new(2013, 7, 7), Date.new(2013, 8, 8), 'Test_details'
+	end
+	it 'Should create a new task' do
+		task.should_not == nil
 	end
 end
-
-
-
