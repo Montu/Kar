@@ -22,23 +22,27 @@ class KarList
 	attr_reader :kar_list
 	
 	def initialize 
-		@kar_list = []
+		@kar_list = Hash.new
 	end
 
-	def add_task
-		raise 'Not Implmented'
+	def add_task task
+		@kar_list[task.hash] = task
 	end
 
-	def delete_task
-		raise 'Not Implemented'
+	def show_task task_hash
+		@kar_list[task_hash]
+	end
+
+	def delete_task task_hash
+		@kar_list.delete task_hash
 	end
 
 	def edit_task
 		raise 'Not Implemented'
 	end
 
-	def search_task
-		raise 'Not Implemented'
+	def search_task task_hash
+		@kar_list[task_hash]
 	end
 end
 

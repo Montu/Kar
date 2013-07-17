@@ -18,7 +18,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-class TodoTask
+class KarTask
 	attr_reader :task_id, :task_name, :task_start_date, :task_end_date, :task_details
 	def initialize task_id, task_name, task_start_date, task_end_date, task_details
 		@task_id = task_id
