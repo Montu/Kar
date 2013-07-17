@@ -4,7 +4,7 @@ Kar
 Author: Akshay Bhardwaj
 Copyright 2013 Akshay Bhardwaj
 
-Kar: A Todo App named written in ruby
+Kar: A Todo App written in ruby
 
 This file is part of Kar
 
