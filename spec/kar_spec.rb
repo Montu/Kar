@@ -18,6 +18,9 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+require 'rspec'
+require '../kar'
+
 describe Kar do
 	it 'Should start without error' do
 		Kar.new.should_not = nil

@@ -27,4 +27,7 @@ class KarTask
 		@task_end_date = task_end_date
 		@task_details = task_details
 	end
+	def match_kar_task field_name, field_value
+		task_reg_exp = /*
+	end
 end

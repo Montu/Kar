@@ -18,10 +18,9 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-
+require 'rspec'
 require '../kar_list'
 require '../kar_task'
-require 'rspec'
 
 describe KarList do
 	before :each do
@@ -35,7 +34,7 @@ describe KarList do
 	it 'Should add a task to the task list' do
 		test_task = KarTask.new 1, 'Test_name', Date.new(2013, 7, 7), Date.new(2013, 8, 8), 'Test_details'
 		@test_kar_list.add_task test_task
-		saved_task = @test_kar_list.search_task test_task.hash
+		saved_task = @test_kar_list.show_task test_task.hash
 		saved_task.should_not == nil
 		saved_task.task_id.should == 1
 		saved_task.task_name.should == 'Test_name'
@@ -48,14 +47,34 @@ describe KarList do
 		test_task = KarTask.new 1, 'Test_name', Date.new(2013, 7, 7), Date.new(2013, 8, 8), 'Test_details'
 		@test_kar_list.add_task test_task
 		@test_kar_list.delete_task test_task.hash
-		@test_kar_list.search_task(test_task.hash).should == nil
+		@test_kar_list.show_task(test_task.hash).should == nil
 	end
 
 	it 'Should edit a task in the task list' do
-
+		test_task = KarTask.new 1, 'Test_name', Date.new(2013, 7, 7), Date.new(2013, 8, 8), 'Test_details'
+		test_task_hash = test_task.hash
+		@test_kar_list.add_task test_task
+		test_task_updated = KarTask.new 1, 'Test_name', Date.new(2013, 7, 7), Date.new(2013, 8, 8), 'Test_details_updated'
+		@test_kar_list.edit_task test_task.hash, test_task_updated
+		saved_task = @test_kar_list.show_task test_task_updated.hash
+		saved_task.should_not == nil
+		saved_task.task_id.should == 1
+		saved_task.task_name.should == 'Test_name'
+		saved_task.task_start_date.should == Date.new(2013,7,7)
+		saved_task.task_end_date.should == Date.new(2013,8,8)
+		saved_task.task_details.should == 'Test_details_updated'
 	end
 
 	it 'Should search a task in the task list' do
-
+		test_task = KarTask.new 1, 'Test_name', Date.new(2013, 7, 7), Date.new(2013, 8, 8), 'Test_details'
+		test_task_hash = test_task.hash
+		@test_kar_list.add_task test_task
+		saved_task = @test_kar_list.show_task test_task_hash
+		saved_task.should_not == nil
+		saved_task.task_id.should == 1
+		saved_task.task_name.should == 'Test_name'
+		saved_task.task_start_date.should == Date.new(2013,7,7)
+		saved_task.task_end_date.should == Date.new(2013,8,8)
+		saved_task.task_details.should == 'Test_details'
 	end
 end

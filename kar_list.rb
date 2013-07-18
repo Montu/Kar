@@ -37,8 +37,10 @@ class KarList
 		@kar_list.delete task_hash
 	end
 
-	def edit_task
-		raise 'Not Implemented'
+	def edit_task task_hash, updated_task
+		task = @kar_list[task_hash]
+		@kar_list.delete task_hash
+		@kar_list[updated_task.hash] = updated_task
 	end
 
 	def search_task task_hash

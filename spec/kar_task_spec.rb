@@ -19,8 +19,8 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 require 'date'
-require '../kar_task'
 require 'rspec'
+require '../kar_task'
 
 describe KarTask do
 	# before :each do

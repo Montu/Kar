@@ -20,7 +20,7 @@
 
 class Kar
 	def initialize
-
+		
 	end
 end
 
